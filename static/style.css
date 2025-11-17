@@ -1,0 +1,199 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container and card */
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.timer-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Timer title */
+.timer-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Status text */
+.status {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.status.work-session {
+    color: #667eea;
+}
+
+.status.break-session {
+    color: #51cf66;
+}
+
+.status.long-break-session {
+    color: #ff6b6b;
+}
+
+/* Timer circle and display */
+.timer-circle {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 8;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: #667eea;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 502.65; /* 2π × 80 */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.timer-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Buttons */
+.timer-controls {
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: 2px solid #667eea;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-start {
+    background: #667eea;
+    color: white;
+}
+
+.btn-start:hover {
+    background: #5a6fd8;
+    transform: translateY(-1px);
+}
+
+.btn-pause {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.btn-pause:hover {
+    background: #ff5252;
+    border-color: #ff5252;
+    transform: translateY(-1px);
+}
+
+.btn-reset {
+    background: transparent;
+    color: #667eea;
+}
+
+.btn-reset:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Progress section */
+.progress-section {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 30px;
+}
+
+.progress-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .timer-card {
+        padding: 30px 20px;
+    }
+    
+    .timer-display {
+        font-size: 32px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin: 0 4px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+}
